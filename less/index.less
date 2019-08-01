@@ -73,12 +73,14 @@ h4 {
 
 p {
 	font-size: 1.8rem;
-	margin-bottom: 2rem;
 }
 
 html, body {
     height: 100%;
 }
+
+@gen-width: 90%;
+
 /*  My code starts here. */
 
 /*========== Mix in ==============*/
@@ -96,12 +98,22 @@ html, body {
 		width: 900px;
 		margin: 0 auto;
 		.bg-color();
-		border: 1px solid red;
+		//border: 1px solid red;
+
+		@media(max-width: 800px){
+			width: @gen-width;
+			margin: 0 auto;
+
+			@media(max-width: 500px){
+				width: @gen-width;
+				margin: 0 auto;
+			}
+		}
 	}
 /*========================================================= */
 
 /*========== Nav ================= */
-header nav {
+ nav {
 	display: flex;
 	justify-content: flex-end;
 
@@ -115,11 +127,6 @@ header nav {
 /*========================================================= */
 
 /*========== Resume-top ================= */
-img {
-	width: 40%;
-	height: 40%;
-	margin-bottom: 20px;
-}
 
 .resume-top {
 		display:flex;
@@ -130,6 +137,18 @@ img {
 		background:#F0F1D6;
 		padding: 5%;
 
+		img {
+			width: 40%;
+			height: 40%;
+			margin-bottom: 20px;
+		}
+		@media(max-width: 800px){
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+		}
+
 		.resume-text {
 			border-bottom: 1px solid gray;
 			padding-bottom: 2rem;
@@ -139,7 +158,7 @@ img {
 .press-here {
 	padding-top: 2rem;
 	padding-bottom: 4rem;
-
+	
 		button {
 			display: flex;
 			justify-content: center;
@@ -153,10 +172,26 @@ img {
 			background: darkgray;
 			color: white;
 
-					img {
-					width: 4.1rem;
-					height: 3.1rem;
+				img {
+				width: 4.1rem;
+				height: 3.1rem;
 		}
+	}
+}
+
+.press-here p {
+	margin-bottom: 1.5rem;
+}
+@media(max-width: 800px){
+	.press-here button{
+		width: 30%;
+		height: 50px;
+	}
+}
+@media(max-width: 500px){
+	.press-here button{
+		width: 100%;
+		height: 50px;
 	}
 }
 /*========================================================= */
@@ -164,8 +199,103 @@ img {
 /*========== middle ================= */
 .middle{
 	.width();
-	
+	margin-top: 2rem;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	.listen-up {
+		width: 50%;
+	}
 }
 
+.good-stuff {
+	width: 47%;
+	margin-bottom:25px;
+
+	@media(max-width: 800px){
+		margin-bottom: 50px;
+
+		@media(max-width: 500px){
+			margin-bottom: 30%;
+			}
+		}
+
+	ul {
+		border: 1px solid lightgray;
+		border-radius: 3px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		text-align: center;
+		
+		li{
+		border-bottom: 1px solid lightgray;
+		display: flex;
+		justify-content:flex-start;
+		align-items: center;
+			
+			p {
+				margin: 10px 20px;
+			}
+		}
+	}
+}
+
+.history {
+	width: 100%;
+	margin: 0 auto;
+	display: grid;
+}
+
+.grid {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+
+	p {
+		margin: 10px 20px;
+	}
+}	
+
+.grid:nth-child(even){
+	background: #FFFFE0;
+}
 /*========================================================= */
 
+/*======== Footer ============== */
+.copyright {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: auto;
+	padding: 35px 0;
+	width:90%;
+	background: #888A00 ;
+	margin-top:30px;
+	color:white;
+}
+/*========================================================= */
+
+/*======== Contact ============== */
+.contact .pika {
+	width:100%;
+	height:400px;
+	margin-top: 10px;
+    	margin-bottom: 40px;
+}
+
+  
+  form {
+	height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+	font-size: 20pt;
+	padding: 20px;
+  }
+
+
+/*========================================================= */
